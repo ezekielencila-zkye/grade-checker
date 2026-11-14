@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grade Checker</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        .box {
+            background-color: white;
+            width: 320px;
+            padding: 30px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            width: 90%;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>Grade Checker</h1>
+
+        <input type="number" id="grade" placeholder="Enter your grade">
+
+        <br>
+
+        <button onclick="checkGrade()">Check Grade</button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        function checkGrade() {
+            let grade = document.getElementById("grade").value;
+
+            if (grade == "") {
+                document.getElementById("result").innerHTML = "Please enter a grade.";
+            }
+            else if (grade < 0 || grade > 100) {
+                document.getElementById("result").innerHTML = "Invalid grade. Enter 0 to 100.";
+            }
+            else if (grade >= 75) {
+                document.getElementById("result").innerHTML = "✓ Passing";
+            }
+            else {
+                document.getElementById("result").innerHTML = "✗ Not Passing";
+            }
+        }
+    </script>
+
+</body>
+</html>
